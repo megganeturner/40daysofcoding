@@ -7,7 +7,7 @@ app.init = function(){
 
   app.camera = new THREE.PerspectiveCamera(75, app.width/app.height, 0.1, 1000);
 
-  app.camera.position.z = 50;
+  app.camera.position.z = 275;
 
   app.camera.lookAt(app.scene.position);
 
@@ -15,70 +15,92 @@ app.init = function(){
   app.renderer.setSize(app.width, app.height);
   document.body.appendChild(app.renderer.domElement);
 
-  var sunGeometry = new THREE.SphereGeometry(2,10,5);
+  var sunGeometry = new THREE.SphereGeometry(2,32,32);
   var sunMaterial = new THREE.MeshBasicMaterial({
-    color: 0xFF7A00,
-    wireframe: true
+    // color: 0xffffff,
+    wireframe: false,
+    map: THREE.ImageUtils.loadTexture('img/one/sunmap.jpg')
   });
   app.sun = new THREE.Mesh(sunGeometry, sunMaterial);
 
-  var mercuryGeometry = new THREE.SphereGeometry(0.382,10,5);
+  var mercuryGeometry = new THREE.SphereGeometry(0.382,32,32);
   var mercuryMaterial = new THREE.MeshBasicMaterial({
-    color: 0x7F7F7F,
-    wireframe: true
+    // color: 0x7F7F7F,
+    wireframe: false,
+    map: THREE.ImageUtils.loadTexture('img/one/mercurymap.jpg'),
+    bumpMap: THREE.ImageUtils.loadTexture('img/one/mercurybump.jpg'),
+    bumpScale: 0.05
   });
   app.mercury = new THREE.Mesh(mercuryGeometry, mercuryMaterial);
 
-  var venusGeometry = new THREE.SphereGeometry(0.949,10,5);
+  var venusGeometry = new THREE.SphereGeometry(0.949,32,32);
   var venusMaterial = new THREE.MeshBasicMaterial({
-    color: 0xD46500,
-    wireframe: true
+    // color: 0xD46500,
+    wireframe: false,
+    map: THREE.ImageUtils.loadTexture('img/one/venusmap.jpg'),
+    bumpMap: THREE.ImageUtils.loadTexture('img/one/venusbump.jpg'),
+    bumpScale: 0.05
   });
   app.venus = new THREE.Mesh(venusGeometry, venusMaterial);
 
-  var earthGeometry = new THREE.SphereGeometry(1,10,5);
+  var earthGeometry = new THREE.SphereGeometry(1,32,32);
   var earthMaterial = new THREE.MeshBasicMaterial({
-    color: 0x8CEFB0,
-    wireframe: true
+    // color: 0x8CEFB0,
+    wireframe: false,
+    map: THREE.ImageUtils.loadTexture('img/one/earthmap1k.jpg'),
+    bumpMap: THREE.ImageUtils.loadTexture('img/one/earthbump1k.jpg'),
+    bumpScale: 0.05
   });
   app.earth = new THREE.Mesh(earthGeometry, earthMaterial);
 
-  var marsGeometry = new THREE.SphereGeometry(0.532, 10,5);
+  var marsGeometry = new THREE.SphereGeometry(0.532, 32,32);
   var marsMaterial = new THREE.MeshBasicMaterial({
-    color: 0xFF7A00,
-    wireframe: true
+    // color: 0xFF7A00,
+    wireframe: false,
+    map: THREE.ImageUtils.loadTexture('img/one/mars_1k_color.jpg'),
+    bumpMap: THREE.ImageUtils.loadTexture('img/one/marsbump1k.jpg'),
+    bumpScale: 0.05
   });
   app.mars = new THREE.Mesh(marsGeometry, marsMaterial);
 
-  var jupiterGeometry = new THREE.SphereGeometry(11.209,10,5);
+  var jupiterGeometry = new THREE.SphereGeometry(11.209,32,32);
   var jupiterMaterial = new THREE.MeshBasicMaterial({
-    color: 0xBFBF8A,
-    wireframe: true
+    // color: 0xBFBF8A,
+    wireframe: false,
+    map: THREE.ImageUtils.loadTexture('img/one/jupitermap.jpg')
   });
   app.jupiter = new THREE.Mesh(jupiterGeometry, jupiterMaterial);
 
-  var saturnGeometry = new THREE.SphereGeometry(9.44,10,5);
+  var saturnGeometry = new THREE.SphereGeometry(9.44,32,32);
   var saturnMaterial = new THREE.MeshBasicMaterial({
-    color: 0xABAB96,
-    wireframe: true
+    // color: 0xABAB96,
+    wireframe: false,
+    map: THREE.ImageUtils.loadTexture('img/one/saturnmap.jpg')
   });
   app.saturn = new THREE.Mesh(saturnGeometry, saturnMaterial);
 
-  var uranusGeometry = new THREE.SphereGeometry(4.007,10,5);
+  var uranusGeometry = new THREE.SphereGeometry(4.007,32,32);
   var uranusMaterial = new THREE.MeshBasicMaterial({
-    color: 0x6BCDEF,
-    wireframe: true
+    // color: 0x6BCDEF,
+    wireframe: false,
+    map: THREE.ImageUtils.loadTexture('img/one/uranusmap.jpg')
   });
   app.uranus = new THREE.Mesh(uranusGeometry, uranusMaterial);
 
-  var neptuneGeometry = new THREE.SphereGeometry(3.883, 10,5);
+  var neptuneGeometry = new THREE.SphereGeometry(3.883, 32,32);
   var neptuneMaterial = new THREE.MeshBasicMaterial({
-    color: 0x4D6CFF,
-    wireframe: true
+    // color: 0x4D6CFF,
+    wireframe: false,
+    map: THREE.ImageUtils.loadTexture('img/one/neptunemap.jpg')
   });
   app.neptune = new THREE.Mesh(neptuneGeometry, neptuneMaterial);
 
-  app.scene.add(app.sun, app.mercury, app.venus, app.earth, app.mars, app.jupiter, app.saturn, app.uranus, app.neptune);
+
+
+  app.light = new THREE.DirectionalLight(0xffffff);
+  app.light.position.set(0,1,1).normalize();
+
+  app.scene.add(app.sun, app.mercury, app.venus, app.earth, app.mars, app.jupiter, app.saturn, app.uranus, app.neptune, app.light);
 
 
 
