@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,600');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+.container {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+header {
+  border-bottom: 1px solid #757575;
+}
+h1 {
+  color: #8CEFD6;
+}
+
+.intro {
+  padding-top: 30px;
+}
+
+#projects {
+  display: flex;
+}
+
+.project {
+  border: 1px solid #757575;
+  margin: 3px;
+}
