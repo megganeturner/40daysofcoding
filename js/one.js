@@ -114,9 +114,15 @@ var t = 0;
 app.animate = function(){
   app.controls.update();
 
-  app.sun.rotation.y += 0.005;
-  app.mercury.rotation.y += 0.007;
-  app.venus.rotation.y += 0.006;
+  // app.sun.rotation.y += 0.005;
+  app.mercury.rotation.y += 0.05865;
+  app.venus.rotation.y -= 0.243;
+  app.earth.rotation.y += 0.001;
+  app.mars.rotation.y += 0.00103;
+  app.jupiter.rotation.y += 0.00041;
+  app.saturn.rotation.y += 0.00044;
+  app.uranus.rotation.y -= 0.00072;
+  app.neptune.rotation.y += 0.00072;
 
   t += 0.01;
   app.mercury.position.x = 3.9*Math.cos(t/0.24) + 0;
