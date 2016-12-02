@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Architects+Daughter|Bentham|Cookie|Londrina+Shadow');
+
+body {
+  margin: 0;
+}
+
+.letters {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 550px;
+}
+
+.p {
+  font-family: 'Londrina Shadow', cursive;
+  color: #8CEFD6;
+}
+
+.l {
+  font-family: 'Cookie', cursive;
+  color: #FF97D0;
+}
+
+.a {
+  font-family: 'Bentham', serif;
+  font-size: 650px;
+  color: #FFFA72;
+}
+
+.y {
+  font-family: 'Architects Daughter', cursive;
+  color: #CC75FF;
+}
+
+.sparkles {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+}

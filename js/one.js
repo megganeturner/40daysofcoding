@@ -15,6 +15,10 @@ app.init = function(){
   app.renderer.setSize(app.width, app.height);
   document.body.appendChild(app.renderer.domElement);
 
+  // app.projector = new THREE.Projector();
+  // app.mouseVector = new THREE.Vector3();
+  // https://soledadpenades.com/articles/three-js-tutorials/object-picking/
+
   var sunGeometry = new THREE.SphereGeometry(2,32,32);
   var sunMaterial = new THREE.MeshBasicMaterial({
     // color: 0xffffff,
@@ -168,4 +172,8 @@ window.addEventListener("resize", app.onResize, false);
 
 $(document).ready(function(){
   app.init();
+
+  $(app.earth).on('click', function(){
+    console.log('clicked earth');
+  })
 })
