@@ -16,22 +16,26 @@ body {
 .p {
   font-family: 'Londrina Shadow', cursive;
   color: #8CEFD6;
+  cursor: pointer;
 }
 
 .l {
   font-family: 'Cookie', cursive;
   color: #FF97D0;
+  cursor: pointer;
 }
 
 .a {
   font-family: 'Bentham', serif;
   font-size: 650px;
   color: #FFFA72;
+  cursor: pointer;
 }
 
 .y {
   font-family: 'Architects Daughter', cursive;
   color: #CC75FF;
+  cursor: pointer;
 }
 
 .sparkles {
