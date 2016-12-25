@@ -10,9 +10,16 @@ $(document).ready(function(){
   });
 
   // NEEDS TO BE FIXED, ONLY FIRING ONCE
-  $letters.on('click', '.l', function(){
-    console.log('yay');
-    $letters.css('transform', 'rotate(180deg)');
+  var rotation = 0;
+
+  jQuery.fn.rotate = function(degrees) {
+      $($letters).css({'transform' : 'rotate('+ degrees +'deg)'});
+      return $($letters);
+  };
+
+  $('.l').click(function() {
+      rotation += 180;
+      $(this).rotate(rotation);
   });
 
   $('.letters').mousemove(function(e){

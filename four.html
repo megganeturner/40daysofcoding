@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Four</title>
+  <script src="js/aframe.js"></script>
+  <script src="js/four.js"></script>
+</head>
+<body>
+  <a-scene>
+    <a-assets>
+      <audio src="https://cdn.aframe.io/basis-guide/backgroundnoise.wav" autoplay preload></audio>
+      <img id="boxTexture" src="https://i.imgur.com/mYmmbrp.jpg">
+      <img id="skyTexture" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
+      <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+    </a-assets>
+    <a-box src="#boxTexture" position="0 2 -5" rotation="0 45 45" scale="2 2 2" scale-on-mouseenter="to: 2.2 2.2 2.2">
+      <a-animation attribute="position" to="0 2.2 -5" direction="alternate" dur="2000"
+      repeat="indefinite"></a-animation>
+      <a-animation attribute="scale" begin="mouseenter" dur="300" to="2.3 2.3 2.3"></a-animation>
+      <a-animation attribute="scale" begin="mouseleave" dur="300" to="2 2 2"></a-animation>
+      <a-animation attribute="rotation" begin="click" dur="2000" to="360 405 45"></a-animation>
+    </a-box>
+    <a-camera>
+      <a-cursor></a-cursor>
+    </a-camera>
+    <a-sky src="#skyTexture"></a-sky>
+    <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30" repeat="10 10"></a-plane>
+    <a-light type="ambient" color="#445451"></a-light>
+    <a-light type="point" intensity="2" position="2 4 4"></a-light>
+  </a-scene>
+  <a-entity bmfont-text="text: Hello, A-Frame!; color: #BBB" position="-0.9 0.2 -3"
+  scale="1.5 1.5 1.5"></a-entity>
+</body>
+</html>

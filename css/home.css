@@ -22,9 +22,12 @@ h1 {
 
 #projects {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .project {
   border: 1px solid #757575;
   margin: 3px;
+  width: 300px;
 }
